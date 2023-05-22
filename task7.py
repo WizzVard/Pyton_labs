@@ -31,24 +31,24 @@ class Student:
         return min(self.all_grades, key=lambda semester: mean(self.all_grades[semester]) if self.all_grades[semester] else None)
 
 
-
-all_grades = {
+student_grades = {
     1: [4, 4, 3, 5, 3, 5, 4, 4],
     2: [5, 3, 4, 5, 4, 4, 4, 5]
 }
 
-student = Student('Shevchenko', 'Taras', all_grades)
-print(f'Student: {student}')
+if __name__ == '__main__':
+    student = Student('Shevchenko', 'Taras', student_grades)
+    print(f'Student: {student}')
 
-semester = 1
-average = student.average_grade_for_sem(semester)
-print(f'Avg grade for {semester} semester: {average}')
+    semester = 1
+    average = student.average_grade_for_sem(semester)
+    print(f'Avg grade for {semester} semester: {average}')
 
-overall_avg = student.average_grade_overall()
-print(f'Avg grade for all semesters: {overall_avg}')
+    overall_avg = student.average_grade_overall()
+    print(f'Avg grade for all semesters: {overall_avg}')
 
-best_sem = student.best_semester()
-print(f'Best of all semesters: {best_sem}')
+    best_sem = student.best_semester()
+    print(f'Best of all semesters: {best_sem}')
 
-worst_sem = student.worst_semester()
-print(f'Worst of all semesters: {worst_sem}')
+    worst_sem = student.worst_semester()
+    print(f'Worst of all semesters: {worst_sem}')
