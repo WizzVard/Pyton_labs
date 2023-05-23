@@ -13,7 +13,7 @@ def leap_year(year):
 
 if __name__ == '__main__':
     month_name = input('Enter month name: ')
-    print(f'In {month_name} - {count_days_in_month(month_name)} days')
+    print(f'Result: {count_days_in_month(month_name)}')
 
     year = int(input('Enter year: '))
     print(leap_year(year))
