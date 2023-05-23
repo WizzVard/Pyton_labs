@@ -25,11 +25,28 @@ class Student:
         return 0
 
     def best_semester(self):
-        return max(self.all_grades, key=lambda semester: mean(self.all_grades[semester]) if self.all_grades[semester] else None)
+        best_semester = None
+        best_mean = 0
+        for semester in self.all_grades:
+            semester_grades = self.all_grades[semester]
+            if semester_grades:
+                current_mean = mean(semester_grades)
+                if current_mean > best_mean:
+                    best_semester = semester
+                    best_mean = current_mean
+        return best_semester
 
     def worst_semester(self):
-        return min(self.all_grades, key=lambda semester: mean(self.all_grades[semester]) if self.all_grades[semester] else None)
-
+        best_semester = None
+        best_mean = 999
+        for semester in self.all_grades:
+            semester_grades = self.all_grades[semester]
+            if semester_grades:
+                current_mean = mean(semester_grades)
+                if current_mean < best_mean:
+                    best_semester = semester
+                    best_mean = current_mean
+        return best_semester
 
 student_grades = {
     1: [4, 4, 3, 5, 3, 5, 4, 4],
@@ -38,7 +55,7 @@ student_grades = {
 
 if __name__ == '__main__':
     student = Student('Shevchenko', 'Taras', student_grades)
-    print(f'Student: {student}')
+    print(student)
 
     semester = 1
     average = student.average_grade_for_sem(semester)
