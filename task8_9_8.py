@@ -21,7 +21,7 @@ def calculator(a, b, operation):
 
 
 if __name__ == '__main__':
-    a = float(input("Enter first number: "))
-    b = float(input("Enter second number: "))
+    a = validate_input()
+    b = validate_input()
     op = input("Enter operation(+, -, /, *, mod, pow, div): ")
     print(f'Result: {calculator(a, b, op)}')
