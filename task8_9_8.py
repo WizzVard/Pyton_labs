@@ -1,3 +1,6 @@
+from utils import validate_input
+
+
 def calculator(a, b, operation):
     if operation == '+':
         return a + b
