@@ -1,6 +1,7 @@
 import random
 
 # Task 10
+ROWS = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
 
 
 def validate_input(row, col):
@@ -8,18 +9,15 @@ def validate_input(row, col):
 
 
 def get_color(row, col):
-    rows = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
-    return 'white' if (rows[row] + col) % 2 == 0 else 'black'
+    return 'white' if (ROWS[row] + col) % 2 == 0 else 'black'
 
 # Task 11
 
 
-def dec_to_bin(number):
+def dec_to_bin(q):
     result = ''
-    q = number
-    while q != 0:
-        r = q % 2
-        r = str(r)
+    while q:
+        r = str(q % 2)
         result = ''.join([result, r])
         q = q // 2
     return result[::-1]
@@ -61,7 +59,7 @@ if __name__ == '__main__':
     col = int(input('Enter the col(1 - 8): '))
     print(validate_input(row, col))
 
-    number = int(input("Enter decimal number: "))
+    number = int(input('Enter decimal number: '))
     print(f'{number} in Decimal is {dec_to_bin(number)} in Binary')
 
     binary = input("Enter binary number: ")
