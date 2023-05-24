@@ -62,8 +62,8 @@ if __name__ == '__main__':
     number = int(input('Enter decimal number: '))
     print(f'{number} in Decimal is {dec_to_bin(number)} in Binary')
 
-    binary = input("Enter binary number: ")
+    binary = input('Enter binary number: ')
     print(f'{binary} in Binary is {bin_to_dec(binary)} in Decimal')
 
-    game = input("Enter rock/scissors/paper: ")
+    game = input('Enter rock/scissors/paper: ')
     print(r_p_s(game))
