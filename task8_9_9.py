@@ -1,4 +1,4 @@
-bills = {
+BILLS = {
     1: "Volodymyr Velikiy",
     2: "Yaroslav Mudry",
     5: "Bogdan Hmelnitskiy",
@@ -12,7 +12,7 @@ bills = {
 }
 
 
-def get_banknote_info(nominal):
+def get_banknote_info(nominal, bills):
     if nominal in bills:
         person = bills[nominal]
         return f"Banknote denomination: {nominal} uan.\nPerson on the banknote: {person}"
@@ -22,5 +22,5 @@ def get_banknote_info(nominal):
 
 if __name__ == '__main__':
     nominal = int(input("Enter the banknote denomination: "))
-    result = get_banknote_info(nominal)
+    result = get_banknote_info(nominal, BILLS)
     print(result)
